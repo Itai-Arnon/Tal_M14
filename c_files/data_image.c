@@ -51,5 +51,6 @@ void print_data_image(DataImage *data_image, const char *name) {
     for (i = 0; i < data_image->size; i++) {
         printf("%04d: %05o\n", i, data_image->data[i]);
     }
+
     printf("\n");
 }

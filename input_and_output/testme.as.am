@@ -1,3 +1,3 @@
-mov r1,r2
-.data 10,1
+mov r1  , LABEL
+LABEL: .data 10,1
 stop

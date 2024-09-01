@@ -14,6 +14,8 @@
 extern const char *reserved_words[];
 extern int reserved_words_count;
 
+
+
 bool is_valid_opcode(const char *opcode) {
     const char *valid_opcodes[] = {
         "mov", "cmp", "add", "sub", "lea", "clr", "not", "inc", "dec",
@@ -351,3 +353,13 @@ IncompleteInstruction* find_incomplete_instruction(IncompleteInstructionTable *t
 }
 
 
+/*addition */
+/*
+void print_binary(int value, int bits) {
+	unsigned int mask = 1u << (bits - 1);
+	for (int i = 0; i < bits; i++) {
+		putchar((value & mask) ? '1' : '0');
+		mask >>= 1;
+	}
+	putchar('\n');
+}*/

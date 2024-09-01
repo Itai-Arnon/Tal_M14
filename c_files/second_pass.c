@@ -9,7 +9,7 @@
 
 #define MAX_LINE_LENGTH 80
 #define MAX_FILENAME 256
-
+void print_Tbinary(int value, int bits);
 int process_second_pass_line(char *line, SymbolTable *symbol_table, DataImage *code_image, IncompleteInstructionTable *incomplete_instructions, int *ic, int *dc);
 int handle_directive(char *directive, char *operands, SymbolTable *symbol_table);
 int handle_entry_directive(char *operands, SymbolTable *symbol_table);
@@ -126,7 +126,30 @@ int second_pass(const char *input_filename, SymbolTable *symbol_table, DataImage
         return 0;
     }
 
-    return 1;  /* Successful completion */
+	/* TEESSSTTT*/
+	print_data_image( code_image, "-----------------------------------------------------");
+	print_data_image( data_image, "-----------------------------------------------------");
+
+
+
+
+
+
+
+	return 1;  /* Successful completion */
+
+
+
+}
+
+void print_Tbinary(int value, int bits) {
+	int i;
+	unsigned int mask = 1u << (bits - 1);
+	for ( i = 0; i < bits; i++) {
+		putchar((value & mask) ? '1' : '0');
+		mask >>= 1;
+	}
+	putchar('\n');
 }
 
 int process_second_pass_line(char *line, SymbolTable *symbol_table, DataImage *code_image, IncompleteInstructionTable *incomplete_instructions, int *ic, int *dc) {

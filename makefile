@@ -22,7 +22,7 @@ all: $(TARGET)
 
 # Link the target executable
 $(TARGET): $(OBJFILES)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES)  -g
 
 # Compile object files
 $(C_DIR)/main.o: $(C_DIR)/main.c $(H_DIR)/first_pass.h $(H_DIR)/second_pass.h \
